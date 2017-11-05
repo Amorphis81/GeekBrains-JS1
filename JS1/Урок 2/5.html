@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function operators(str) {
+            var arrStr = str.split(' ');
+            if (arrStr[1] == '+'){
+                return +arrStr[0] + (+arrStr[2]);
+            }
+            if (arrStr[1] == '-'){
+                return arrStr[0] - arrStr[2];
+            }
+            if (arrStr[1] == '/'){
+                return arrStr[0] / arrStr[2];
+            }
+            if (arrStr[1] == '*'){
+                return arrStr[0] * arrStr[2];
+            }
+        }
+        console.log(operators('2 + 6'));
+        console.log(operators('6 - 3'));
+        console.log(operators('8 / 2'));
+        console.log(operators('2 * 6'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a = Math.floor(random(10) - random(10));
+        console.log('a = ' + a);
+        var b = Math.floor(random(10) - random(10));
+        console.log('b = ' + b);
+
+        if (a>0 && b>0){
+            alert ('a-b='+ (a - b));
+        } else if (a<0 && b<0) {
+            alert('a*b=' + (a * b));
+        } else alert('a+b=' + (a + b));
+
+        
+        function random(limit) {
+            return Math.random() * limit;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

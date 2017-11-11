@@ -4,11 +4,22 @@
 	<meta charset="UTF-8">
 	<title>Задание 1</title>
 	<script>
-		var i = 0;
-		while (i <= 100){
-			console.log(i);
+		var i = 2;		
+		var arr = [];
+		nextPrime: 
+		while (i < 100){			
 			i++;
+			var j = 2;
+			while (j < i){				
+				if (i%j == 0){
+					continue nextPrime;
+				}
+				j++;
+			}
+			console.log('i = ' + i);
 		}
+
+
 	</script>
 </head>
 <body>

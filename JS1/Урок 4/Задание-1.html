@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function numberToObject(number) {
+      //console.log(arguments);
+      if (number < 0 || number > 999 || isNaN(number)) {
+        return('Ошибка данных. ' + number + ' не соответствует условию');
+      }
+      var numArr = String(number);
+      var numObject = {};
+      function returnObject(obj){
+        var arrReturnObject = [];
+        for (var key in obj){
+          arrReturnObject.push(key + ': ' + obj[key]);
+        }
+        return arrReturnObject.join(', ');
+      }
+      
+      if (numArr.length === 1) {
+        numObject['единицы'] = numArr[0];
+        return returnObject(numObject);
+      }
+
+      if (numArr.length === 2) {
+        numObject['единицы'] = numArr[0];
+        numObject['десятки'] = numArr[1];
+        return returnObject(numObject);        
+      }
+
+      if (numArr.length === 3) {
+        numObject['единицы'] = numArr[0];
+        numObject['десятки'] = numArr[1];
+        numObject['сотни'] = numArr[2];
+        return returnObject(numObject);
+      }
+    }
+    
+    console.log(numberToObject(1));
+    console.log(numberToObject(9123));
+    console.log(numberToObject(12));
+    console.log(numberToObject('qqq'));
+    console.log(numberToObject(123));
+    console.log(numberToObject(-123));
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

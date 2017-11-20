@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 15px 0 15px 0;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+td {
+  width: 80px;
+  height: 80px;  
+  text-align: center;
+}
+
+.topCell {
+  vertical-align: bottom;
+  height: 40px;
+}
+
+.rightCell {
+  text-align: right;
+}
+
+.leftNumber {
+  padding-right: 5px;
+}
+
+.leftCell {
+  text-align: left;
+}
+
+.rightNumber {
+  padding-left: 5px;
+}
+
+.bottomCell{
+  vertical-align: top;
+  height: 40px;
+}
+
+.lightCell {
+  background-color: #D8B572;
+}
+
+.darkCell {
+  background-color: #722E15;
+}

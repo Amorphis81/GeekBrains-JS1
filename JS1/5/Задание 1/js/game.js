@@ -37,7 +37,7 @@ function createTr(tableWidth, tableHeight, i, g){
     else {
       count = counter ();
       nowTd.id = j + '' + g;
-      nowTd.innerText = j + '' + g;
+      //nowTd.innerText = j + '' + g;
       if (i%2 != 0 && count%2 != 0 || i%2 == 0 && count%2 == 0){
         nowTd.className = 'lightCell';
       } else nowTd.className = 'darkCell';      

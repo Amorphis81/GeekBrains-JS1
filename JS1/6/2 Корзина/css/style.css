@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#catalog{
+  width: 1500px;
+  height: 300px;
+}
+
+.catalog_item{
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  float: left;
+  margin-right: 20px;
+}
+
+.catalog_item img{
+  width: 200px;
+  height: 200px;
+}
+
+#basket{
+  margin-top: 30px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;  
+}
+
+.button_buy{
+  width: 50px;
+  height: 20px;
+  border: 1px solid black;
+}

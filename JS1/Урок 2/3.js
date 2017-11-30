@@ -1,0 +1,1 @@
+var a = Math.floor(Math.random() * 10);

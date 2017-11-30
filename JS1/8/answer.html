@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    if (!("a" in window)) {
+      var a = 1;
+    }
+    //alert(a);
+    /*На стадии подготовки a объявляется и ей присваивается undefined, т.е. она есть в window
+    в условии задано присвоение значение, если а не существует, и оно, соотвественно не выполняется.
+    следовательно а = undefined
+    */
+
+    /*var b = function a(x) {
+      x && a(--x);
+    };
+    //alert(a);
+    /*снова undefined, т.к. функция а присваивается b и следовательно не видна в глобальной области
+     */
+
+    /*function a(x) {
+      return x * 2;
+    }
+    var a;
+    //alert(a);
+    //вернется содержимое функции. наверное потому, что var a объявляется в window, а потом ей присваивается значение функции.
+
+    function b(x, y, a) {
+      arguments[2] = 10;
+      alert(a);
+    }
+    //b(1, 2, 3);
+    //вернет 10, т.к. в arguments[2] 3-й символ, т.е. а переопределяется*/
+
+    function a() {
+      "use strict";
+      alert(this);
+    }
+    a.call(null);
+    //вернет [object Window], почему - не знаю
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

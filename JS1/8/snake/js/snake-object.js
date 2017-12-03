@@ -1,8 +1,8 @@
 'use strict';
 
-var FIELD_SIZE_X = 20;
-var FIELD_SIZE_Y = 20;
-var SNAKE_SPEED = 300;
+const FIELD_SIZE_X = 20;
+const FIELD_SIZE_Y = 20;
+const SNAKE_SPEED = 300;
 
 function init() {
   prepareGameField();
@@ -15,15 +15,15 @@ function init() {
 }
 
 function prepareGameField() {
-  var gameTable = document.createElement('table');
+  let gameTable = document.createElement('table');
   gameTable.classList.add('game-table');
   gameTable.id = 'game-table';
 
-  for (var i = 0; i < FIELD_SIZE_X; i++) {
-    var row = document.createElement('tr');
+  for (let i = 0; i < FIELD_SIZE_X; i++) {
+    let row = document.createElement('tr');
     row.classList.add('game-table-row');
-    for (var j = 0; j < FIELD_SIZE_Y; j++) {
-      var cell = document.createElement('td');
+    for (let i = 0; i < FIELD_SIZE_Y; i++) {
+      let cell = document.createElement('td');
       cell.classList.add('game-table-cell');
 
       row.appendChild(cell);
@@ -46,12 +46,12 @@ Snake.prototype.respawn = function (){
   this.snakeCoordX = Math.floor(FIELD_SIZE_X / 2);
   this.snakeCoordY = Math.floor(FIELD_SIZE_Y / 2);
 
-  var gameTable = document.getElementById('game-table');
+  let gameTable = document.getElementById('game-table');
   // head
-  var snakeHead = gameTable.children[this.snakeCoordX].children[this.snakeCoordY];
+  let snakeHead = gameTable.children[this.snakeCoordX].children[this.snakeCoordY];
   snakeHead.classList.add('snake-unit');
   // tail
-  var snakeTail = gameTable.children[this.snakeCoordX + 1].children[this.snakeCoordY];
+  let snakeTail = gameTable.children[this.snakeCoordX + 1].children[this.snakeCoordY];
   snakeTail.classList.add('snake-unit');
 
   this.body.push(snakeTail);
@@ -59,8 +59,8 @@ Snake.prototype.respawn = function (){
 }
 
 Snake.prototype.move = function (){
-  var gameTable = document.getElementById('game-table');
-  var newUnit; 
+  let gameTable = document.getElementById('game-table');
+  let newUnit; 
   
   switch (this.direction) {
     case 'top':
@@ -94,7 +94,7 @@ Snake.prototype.move = function (){
     this.body.push(newUnit);
 
     if (!isFood(newUnit)) {
-      var snakeRemoved = this.body.shift(); 
+      let snakeRemoved = this.body.shift(); 
       snakeRemoved.classList.remove('snake-unit');
     }
   } else {
@@ -121,14 +121,14 @@ Snake.prototype.changeDirectionHandler = function (event) {
 }
 
 //создаем объект
-var snake = new Snake();
+let snake = new Snake();
 
 //инициализация игры
 function startGameHandler() {
   isGameStarted(true);
   snake.respawn();
   snake.snakeTimer = setInterval(snake.move.bind(snake), SNAKE_SPEED);
-  var createApple = createFood('apple');
+  let createApple = createFood('apple');
   setTimeout(createApple, 500);
 }
 
@@ -141,7 +141,7 @@ function isSnakeUnit(unit) {
 }
 
 function isFood(unit) {
-  var score = 0;
+  let score = 0;
   if (unit.classList.contains('food-unit')) {
     unit.classList.remove('food-unit');
     score++;
@@ -157,14 +157,14 @@ function isFood(unit) {
 }
 
 function createFood(obj) {
-  var foodCreated = false;
-  var gameTable = document.getElementById('game-table');
+  let foodCreated = false;
+  let gameTable = document.getElementById('game-table');
 
   while (!foodCreated) {
-    var foodX = Math.floor(Math.random() * FIELD_SIZE_X);
-    var foodY = Math.floor(Math.random() * FIELD_SIZE_Y);
+    let foodX = Math.floor(Math.random() * FIELD_SIZE_X);
+    let foodY = Math.floor(Math.random() * FIELD_SIZE_Y);
 
-    var foodCell = gameTable.children[foodX].children[foodY];
+    let foodCell = gameTable.children[foodX].children[foodY];
 
     if (!foodCell.classList.contains('snake-unit')) {
       if (obj == 'apple') foodCell.classList.add('food-unit');
@@ -182,7 +182,7 @@ function gameOver() {
 }
 
 function addScore(score) {
-  var totalScore = document.getElementById('total-score');
+  let totalScore = document.getElementById('total-score');
   totalScore.innerText = score;
 }
 
